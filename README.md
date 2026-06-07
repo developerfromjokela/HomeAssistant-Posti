@@ -9,9 +9,9 @@
 
 [![Discord][discord-shield]][discord]
 
-_Component to integrate with [posten][posten]._
+_Component to integrate with [posti.fi][posti.fi]._
 
-Posten integrasjon som trigger dagen når posten kommer: https://www.posten.no/levering-av-post
+Posti integrasjon som trigger dagen når posten kommer: https://www.posti.fi/vastaanottaminen/tarkista-alueesi-jakelupaivat
 
 ![screenshot](https://i.imgur.com/ZOISPzB.png)
 
