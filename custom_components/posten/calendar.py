@@ -68,4 +68,4 @@ class PostenCalendarEntity(CalendarEntity):
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     coordinator = hass.data[DOMAIN][config_entry.entry_id]
-    async_add_entities([PostenCalendarEntity(coordinator, "Posten Calendar", config_entry)])
+    async_add_entities([PostenCalendarEntity(coordinator, "Posti Calendar", config_entry)])
