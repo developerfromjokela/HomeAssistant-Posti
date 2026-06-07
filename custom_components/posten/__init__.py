@@ -76,6 +76,7 @@ class PostenDataUpdateCoordinator(DataUpdateCoordinator):
             data = await self.api.async_get_data()
             if len(data) == 0:
                 raise UpdateFailed(f"Invalid zipcode")
+            data = data[0]
         except PostenApiError as exception:
             self.logger.error(exception)
             raise UpdateFailed(exception) from exception
@@ -83,7 +84,7 @@ class PostenDataUpdateCoordinator(DataUpdateCoordinator):
         if not isinstance(data, dict):
             raise UpdateFailed(f"Invalid data from API {data}")
 
-        return data[0]
+        return data
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
