@@ -29,7 +29,7 @@ class IntegrationPostenSensor(IntegrationPostenEntity, SensorEntity):
     @property
     def native_value(self):
         """Return the native value of the sensor."""
-        return self.coordinator.data.get("delivery_dates")
+        return self.coordinator.data.get("deliveryDates")
 
     @property
     def icon(self):

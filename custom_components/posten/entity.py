@@ -14,7 +14,7 @@ class IntegrationPostenEntity(CoordinatorEntity):
     def _next_delivery(self) -> datetime.date:
         """Return the next delivery as datetime.date."""
         return datetime.date(
-            *map(int, self.coordinator.data.get("delivery_dates")[0].split("-"))
+            *map(int, self.coordinator.data.get("deliveryDates")[0].split("-"))
         )
 
     @property

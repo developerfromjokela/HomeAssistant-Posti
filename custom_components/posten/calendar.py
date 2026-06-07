@@ -47,13 +47,13 @@ class PostenCalendarEntity(CalendarEntity):
 
     def _fetch_events(self):
         """Call Posten API to fetch delivery dates."""
-        deliveries = self.coordinator.data.get("delivery_dates")
+        deliveries = self.coordinator.data.get("deliveryDates")
         events = []
         for delivery in deliveries:
             delivery_date = parse_datetime(delivery).date()
             if delivery_date:
                 events.append(CalendarEvent(
-                    summary="Levering",
+                    summary="Delivery",
                     start=delivery_date,
                     end=delivery_date + datetime.timedelta(days=1)
                 ))
