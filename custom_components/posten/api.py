@@ -31,16 +31,9 @@ class IntegrationPostenApiClient:
         """
         return await self.api_wrapper(
             method="get",
-            url=f"https://www.posten.no/levering-av-post/_/service/no.posten.website/delivery-days?postalCode={self._postalcode}",
+            url=f"https://www.posti.fi/maildelivery-api-proxy/?q={self._postalcode}",
             headers={
-                "content-type": "application/json; charset=UTF-8",
-                "x-requested-with": "XMLHttpRequest",
-                "kp-api-token": base64.b64encode(
-                    bytes(base64.b64decode("f3ccd044MTY4MjYyODE2MQ==")[0:6])
-                    + bytes(str(int(time.time())), "utf8")
-                )
-                .decode()
-                .replace("=", ""),
+                "content-type": "application/json; charset=UTF-8"
             },
         )
 
